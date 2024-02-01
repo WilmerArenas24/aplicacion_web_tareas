@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de pendientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FC812D, #D5D8D8);
+            font-family: 'Roboto', sans-serif;
+            padding-top: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+
+        .container {
+            width: 50%; /* Ocupa el 70% del body */
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
+            color: #454646;
+            padding: 20px;
+        }
+
+        .container > * {
+            margin-bottom: 10px;
+        }
+
+                h1,h2,h3,h4,h5,h6{
+                 font-family: 'Roboto', sans-serif;
+                }
+        /* Quita el color predeterminado de los enlaces */
+        a {
+            color: inherit;
+            text-decoration: none; /* Esto elimina el subrayado predeterminado */
+            font-weight: bold;
+        }
+
+        /* Establece el tamaño de fuente para los párrafos y enlaces */
+        p, a {
+            font-size: 16px;
+        }
+
+
+                .barra-busqueda-personal {
+                display: flex;
+                margin-top: 10px;
+            }
+
+            input[type="text"] {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                flex: 1;
+                margin-right: 5px; /* Margen entre la caja de búsqueda y el botón */
+            }
+
+            input[type="submit"] {
+                padding: 10px 15px;
+                background-color: #4CAF50; /* Color verde */
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049; /* Color verde más oscuro en el hover */
+            }
+
+                .nueva-tarea {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #FF5454; /* Rojo */
+                color: #FFFFFF; /* Blanco */
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease; /* Transición suave en el cambio de color de fondo */
+
+                /* Añade estilos adicionales si es necesario, como sombras o bordes */
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .nueva-tarea:hover {
+                background-color: #D32F2F; /* Rojo más oscuro en el hover */
+            }
+                    .parrafo-usuario {
+                font-size: 17px;
+                color: #333; /* Color del texto */
+                margin: 10px 0; /* Márgenes superior e inferior */
+            }
+
+
+        .barra-superior{
+        display:flex;
+        justify-content:space-between;
+        border-radius: 5px 5px 0 0;
+                }
+
+        .envoltorio-tarea{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        padding: 5px;
+        background-color: #EEEEED;
+        border-top: 2px solid rgb(255, 255, 255);
+        border-radius: 5px;
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .titulo-tarea {
+        display:flex;
+        }
+
+        .titulo-tarea a{
+        text-decoration: none;
+        color: #4b5156;
+        margin-left: 30px;
+        }
+
+        .icono-tarea-completa{
+        height:20px;
+        width:20px;
+        background-color: rgb(105, 162, 105);
+        border-radius: 50px;
+
+        }
+
+        .icono-tarea-incompleta{
+        height:20px;
+        width:20px;
+        background-color: rgb(218, 218, 218);
+        border-radius: 50px;
+
+        }
+
+        .enlace-eliminar{
+        text-decoration: none;
+        font-weight: 900;
+        color: #EA4220;
+        font-size: 18px;
+        line-height: 0;
+
+        }
+    .boton-volver {
+
+                background-color: #09C6EC; /* Color verde */
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                height: 40px;
+                width:80px;
+                font-weight: bold;
+
+
+    }
+
+    .boton-volver-atras
+    {
+    background-color: #09C6EC; /* Color verde */
+    color: #fff;
+    padding:10px;
+    border-radius: 5px;
+
+    font-size: 17px;
+    height: 40px;
+    width:80px;
+    font-weight: bold;
+
+    }
+
+
+    .form-nueva-tarea {
+    background-color: #FFFFFF; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno para mayor claridad */
+    border-radius: 8px; /* Bordes redondeados */
+    max-width: 90%; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario en el centro de la página */
+}
+
+
+
+        .form-nueva-tarea input[type="submit"] {
+            background-color: #007BFF; /* Color azul para el botón de enviar */
+            color: #fff; /* Texto blanco en el botón */
+            padding: 10px 20px; /* Espaciado interno en el botón */
+            border: none;
+            border-radius: 5px; /* Bordes redondeados en el botón */
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px; /* Margen superior para separar el botón de los otros elementos */
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea{
+        border: 2px solid #007BFF;
+        border-radius:5px;
+        padding: 10px;
+        width: 90%;
+        }
+
+        .ingresa{
+        color: blue;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="container">
+         {% block content %}
+
+         {% endblock content %}
+     </div>
+
+</body>
+</html>

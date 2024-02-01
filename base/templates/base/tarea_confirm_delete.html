@@ -1,0 +1,14 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+
+
+<form method="POST" >
+    {% csrf_token %}
+    <p>Quieres eliminar esta  tarea: "{{tarea}}"</p>
+
+    <input class="boton-volver-atras" type="button" onclick="window.location.href='{% url 'tareas' %}'" value="Volver">
+    <input type="submit" value="Eliminar">
+
+
+</form>
+         {% endblock content %}

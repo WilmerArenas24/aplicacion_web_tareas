@@ -1,0 +1,26 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+
+<div class="barra-superior-crear-tarea">
+<h2>Nueva tarea</h2>
+</div>
+
+<hr>
+
+<div class="cuerpo tarjeta">
+
+
+
+<form class="form-nueva-tarea" method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+<a class="boton-volver-atras" href="{% url 'tareas' %}">Volver</a>
+    <input type="submit" value="Enviar">
+
+</form>
+
+</div>
+
+{% endblock content %}
